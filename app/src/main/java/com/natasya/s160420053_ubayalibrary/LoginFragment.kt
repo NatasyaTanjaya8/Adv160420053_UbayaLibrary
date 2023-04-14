@@ -1,5 +1,6 @@
 package com.natasya.s160420053_ubayalibrary
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,6 +23,10 @@ class LoginFragment : Fragment() {
         buttonCreateAccount.setOnClickListener {
             var action = LoginFragmentDirections.actionRegisterFragment()
             Navigation.findNavController(it).navigate(action)
+        }
+        buttonSignIn.setOnClickListener {
+            var intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }
