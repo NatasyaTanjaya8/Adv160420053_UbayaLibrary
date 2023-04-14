@@ -13,9 +13,6 @@
         <action
             android:id="@+id/actionRegisterFragment"
             app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/actionHomeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -26,9 +23,4 @@
             android:id="@+id/actionLoginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.natasya.s160420053_ubayalibrary.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
 </navigation>

@@ -23,9 +23,5 @@ class LoginFragment : Fragment() {
             var action = LoginFragmentDirections.actionRegisterFragment()
             Navigation.findNavController(it).navigate(action)
         }
-        buttonSignIn.setOnClickListener {
-            var action = LoginFragmentDirections.actionHomeFragment()
-            Navigation.findNavController(it).navigate(action)
-        }
     }
 }
