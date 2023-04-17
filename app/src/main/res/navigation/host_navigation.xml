@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/itemHome"
-        android:name="com.natasya.s160420053_ubayalibrary.HomeFragment"
+        android:name="com.natasya.s160420053_ubayalibrary.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/itemLibrary"
-        android:name="com.natasya.s160420053_ubayalibrary.LibraryFragment"
+        android:name="com.natasya.s160420053_ubayalibrary.view.LibraryFragment"
         android:label="fragment_library"
         tools:layout="@layout/fragment_library" />
     <fragment
         android:id="@+id/itemProfile"
-        android:name="com.natasya.s160420053_ubayalibrary.ProfileFragment"
+        android:name="com.natasya.s160420053_ubayalibrary.view.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
