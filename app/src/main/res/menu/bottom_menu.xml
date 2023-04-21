@@ -10,7 +10,7 @@
     <item
         android:id="@+id/itemLibrary"
         android:icon="@drawable/ic_baseline_library_books_24"
-        android:title="Library"
+        android:title="Order List"
         app:showAsAction="always" />
     <item
         android:id="@+id/itemProfile"
