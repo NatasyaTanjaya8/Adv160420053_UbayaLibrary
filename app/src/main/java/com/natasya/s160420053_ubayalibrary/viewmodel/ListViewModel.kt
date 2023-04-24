@@ -17,8 +17,6 @@ class ListViewModel(application: Application):AndroidViewModel(application) {
     var booksLD = MutableLiveData<ArrayList<Book>>()
     var bookLoadError = MutableLiveData<Boolean>()
     var loadingLD = MutableLiveData<Boolean>()
-    var TAG = "volleyTag"
-    private var queue: RequestQueue? = null
 
     fun refresh(){
         /*

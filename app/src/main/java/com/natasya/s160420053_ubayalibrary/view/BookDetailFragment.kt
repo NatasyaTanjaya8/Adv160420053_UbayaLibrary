@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.natasya.s160420053_ubayalibrary.R
 import com.natasya.s160420053_ubayalibrary.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.fragment_book_detail.*
@@ -44,6 +45,10 @@ class BookDetailFragment : Fragment() {
             textPenulis.text = "Penulis: $penulis"
             textPenerbit.text = "Penerbit: $penerbit"
             textTanggalRilis.text = "Tanggal Rilis: $tanggal_rilis"
+        }
+        buttonOrder.setOnClickListener {
+            var action = BookDetailFragmentDirections.actionOrderFragment()
+            Navigation.findNavController(it).navigate(action)
         }
     }
 }
