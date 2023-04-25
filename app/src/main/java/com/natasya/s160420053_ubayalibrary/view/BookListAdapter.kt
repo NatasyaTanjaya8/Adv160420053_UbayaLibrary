@@ -3,10 +3,13 @@ package com.natasya.s160420053_ubayalibrary.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.ProgressBar
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.natasya.s160420053_ubayalibrary.R
 import com.natasya.s160420053_ubayalibrary.model.Book
+import com.natasya.s160420053_ubayalibrary.util.loadImage
 import kotlinx.android.synthetic.main.book_list_item.view.*
 
 class BookListAdapter(var bookList:ArrayList<Book>):RecyclerView.Adapter<BookListAdapter.BookViewHolder>() {
@@ -21,6 +24,9 @@ class BookListAdapter(var bookList:ArrayList<Book>):RecyclerView.Adapter<BookLis
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         holder.view.txtID.text = bookList[position].id
         holder.view.txtJudul.text = bookList[position].judul
+        var imageView = holder.view.findViewById<ImageView>(R.id.imageView2)
+        var progressBar = holder.view.findViewById<ProgressBar>(R.id.progressBar)
+        imageView.loadImage(bookList[position].url, progressBar)
         holder.view.btnDetail.setOnClickListener {
             var action = HomeFragmentDirections.actionBookDetailFragment(bookList[position].id.toString(), bookList[position].judul.toString(), bookList[position].deskripsi.toString(), bookList[position].penulis.toString(), bookList[position].penerbit.toString(), bookList[position].tanggal_rilis.toString(), bookList[position].url.toString())
             Navigation.findNavController(it).navigate(action)

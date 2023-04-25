@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.ProgressBar
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.natasya.s160420053_ubayalibrary.R
+import com.natasya.s160420053_ubayalibrary.util.loadImage
 import com.natasya.s160420053_ubayalibrary.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.fragment_book_detail.*
 
@@ -39,6 +42,7 @@ class BookDetailFragment : Fragment() {
             penerbit = BookDetailFragmentArgs.fromBundle(requireArguments()).penerbit
             tanggal_rilis = BookDetailFragmentArgs.fromBundle(requireArguments()).tanggalRilis
             url = BookDetailFragmentArgs.fromBundle(requireArguments()).url
+            imageView3.loadImage(url, progressBar2)
             textID.text = "ID: $id"
             textJudul.text = "Judul: $judul"
             textDeskripsi.text = "Deskripsi: $deskripsi"
