@@ -23,7 +23,11 @@
         android:id="@+id/itemProfile"
         android:name="com.natasya.s160420053_ubayalibrary.view.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/actionEditProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bookDetailFragment"
         android:name="com.natasya.s160420053_ubayalibrary.view.BookDetailFragment"
@@ -62,5 +66,14 @@
         <action
             android:id="@+id/actionItemHome"
             app:destination="@id/itemHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.natasya.s160420053_ubayalibrary.view.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/actionItemProfile"
+            app:destination="@id/itemProfile" />
     </fragment>
 </navigation>
