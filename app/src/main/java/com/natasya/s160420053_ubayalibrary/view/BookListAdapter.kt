@@ -28,7 +28,7 @@ class BookListAdapter(var bookList:ArrayList<Book>):RecyclerView.Adapter<BookLis
         var progressBar = holder.view.findViewById<ProgressBar>(R.id.progressBar)
         imageView.loadImage(bookList[position].url, progressBar)
         holder.view.btnDetail.setOnClickListener {
-            var action = HomeFragmentDirections.actionBookDetailFragment(bookList[position].id.toString(), bookList[position].judul.toString(), bookList[position].deskripsi.toString(), bookList[position].penulis.toString(), bookList[position].penerbit.toString(), bookList[position].tanggal_rilis.toString(), bookList[position].url.toString())
+            var action = HomeFragmentDirections.actionBookDetailFragment(bookList[position].id.toString(), bookList[position].judul.toString(), bookList[position].deskripsi.toString(), bookList[position].penulis.toString(), bookList[position].penerbit.toString(), bookList[position].tanggal_rilis.toString(), bookList[position].url.toString(), "Home")
             Navigation.findNavController(it).navigate(action)
         }
     }

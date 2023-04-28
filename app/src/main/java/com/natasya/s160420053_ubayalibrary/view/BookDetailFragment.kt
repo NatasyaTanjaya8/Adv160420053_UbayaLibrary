@@ -15,7 +15,6 @@ import com.natasya.s160420053_ubayalibrary.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.fragment_book_detail.*
 
 class BookDetailFragment : Fragment() {
-    private lateinit var viewModel: DetailViewModel
     var id = ""
     var judul = ""
     var deskripsi = ""
@@ -23,6 +22,7 @@ class BookDetailFragment : Fragment() {
     var penerbit = ""
     var tanggal_rilis = ""
     var url = ""
+    var keterangan = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +42,7 @@ class BookDetailFragment : Fragment() {
             penerbit = BookDetailFragmentArgs.fromBundle(requireArguments()).penerbit
             tanggal_rilis = BookDetailFragmentArgs.fromBundle(requireArguments()).tanggalRilis
             url = BookDetailFragmentArgs.fromBundle(requireArguments()).url
+            keterangan = BookDetailFragmentArgs.fromBundle(requireArguments()).keterangan
             imageView3.loadImage(url, progressBar2)
             textID.text = "ID: $id"
             textJudul.text = "Judul: $judul"
@@ -49,9 +50,21 @@ class BookDetailFragment : Fragment() {
             textPenulis.text = "Penulis: $penulis"
             textPenerbit.text = "Penerbit: $penerbit"
             textTanggalRilis.text = "Tanggal Rilis: $tanggal_rilis"
+            if (keterangan == "Home"){
+                buttonOrder.visibility = View.VISIBLE
+                buttonBack.visibility = View.GONE
+            }
+            else if (keterangan == "Library"){
+                buttonOrder.visibility = View.GONE
+                buttonBack.visibility = View.VISIBLE
+            }
         }
         buttonOrder.setOnClickListener {
             var action = BookDetailFragmentDirections.actionOrderFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+        buttonBack.setOnClickListener {
+            var action = BookDetailFragmentDirections.actionItemLibrary()
             Navigation.findNavController(it).navigate(action)
         }
     }

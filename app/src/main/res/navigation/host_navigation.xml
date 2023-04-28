@@ -18,7 +18,11 @@
         android:id="@+id/itemLibrary"
         android:name="com.natasya.s160420053_ubayalibrary.view.LibraryFragment"
         android:label="fragment_library"
-        tools:layout="@layout/fragment_library" />
+        tools:layout="@layout/fragment_library" >
+        <action
+            android:id="@+id/actionBookDetailFragment2"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/itemProfile"
         android:name="com.natasya.s160420053_ubayalibrary.view.ProfileFragment"
@@ -57,6 +61,12 @@
         <action
             android:id="@+id/actionOrderFragment"
             app:destination="@id/orderFragment" />
+        <action
+            android:id="@+id/actionItemLibrary"
+            app:destination="@id/itemLibrary" />
+        <argument
+            android:name="keterangan"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
